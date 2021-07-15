@@ -30,7 +30,7 @@ module.exports = function (RED) {
           outValue = (raw_input / 10, 2);
         }
         if (signal_type == "Farenheit") {
-          outValue = ((raw_input / 10) * (9 / 5) + 32, 2);
+          outValue = ((raw_input / 10) * (9 / 5) + 32);
         }
         outputMsg.payload = outValue;
         node.send(outputMsg);
