@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Analog Output',{
+    RED.nodes.registerType('analog output',{
         category: 'wago pfc',
         color: '#C0C0C0',
         defaults: {
@@ -16,12 +16,12 @@
         outputs:1,
         icon: "module_icon.png",
         label: function() {
-            return this.name||"Analog Output";
+            return this.name||"analog output";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="Analog Output">
+<script type="text/x-red" data-template-name="analog output">
     <div class="form-row">
         <label for="node-input-module"><i class="fa fa-arrow-down"></i>Module</label>
         <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
@@ -74,7 +74,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="Analog Output">
+<script type="text/x-red" data-help-name="analog output">
     <p>A node that formats output data for WAGO Kbus<br/>
     
     Select the desired module and output type, scaling, etc...<br/>
