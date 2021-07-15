@@ -66,13 +66,13 @@ module.exports = function (RED) {
                 }
               }
             }
-            if (msg.topic == status_topic)  {
-              node.send([msg.payload, null]);
-            }
-            if (msg.topic == pi_topic)  {
-              node.send([null, msg.payload]);
-            }
-            //node.send(msg)
+            //if (msg.topic == status_topic)  {
+            //  node.send([msg, null]);
+            //}
+            //if (msg.topic == pi_topic)  {
+            //  node.send([null, msg]);
+            //}
+            node.send(msg)
           }.bind(this),
           this.id
         )
