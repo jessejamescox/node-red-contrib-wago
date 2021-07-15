@@ -1,53 +1,52 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Temperature Input',{
-        category: 'wago pfc',
-        color: '#C0C0C0',
-        defaults: {
-            module: {value:"0"},
-            channel: {value:"0"},
-            name: {value:""},
-            sensor_type: {value:"Thermocouple"},
-            signal_type: {value:"Celsius"}
-        },
-        inputs:1,
-        outputs:1,
-        icon: "module_icon.png",
-        label: function() {
-            return this.name||"Temperature Input";
-        }
-
-    });
+  RED.nodes.registerType("Temperature Input", {
+    category: "wago pfc",
+    color: "#C0C0C0",
+    defaults: {
+      module: { value: "0" },
+      channel: { value: "0" },
+      name: { value: "" },
+      sensor_type: { value: "TC" },
+      signal_type: { value: "Celsius" },
+    },
+    inputs: 1,
+    outputs: 2,
+    icon: "module_icon.png",
+    label: function () {
+      return this.name || "temperature sensor";
+    },
+  });
 </script>
 
-<script type="text/x-red" data-template-name="Temperature Input">
-    <div class="form-row">
-        <label for="node-input-module"><i class="fa fa-arrow-down"></i>Module</label>
-        <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
-    </div>
-    <div class="form-row">
-        <label for="node-input-channel"><i class="fa fa-arrow-down"></i>Channel</label>
-        <input type="text" id="node-input-channel" placeholder="channel number"  style="width: 150px;">
-    </div>
-    <div class="form-row">
-        <label for="node-input-sensorType"><i class="icon-tag"></i> Sensor Type</label>
-        <select type="text" id="node-input-sensorType" placeholder="sensorType">
-            <option value="RTD">RTD</option>
-            <option value="Thermocouple">Thermocouple</option>
-        </select>
-    </div>
-        <div class="form-row">
-        <label for="node-input-signalType"><i class="icon-tag"></i> Signal Type</label>
-        <select type="text" id="node-input-signalType" placeholder="signalType">
-            <option value="Celsius">Celsius</option>
-            <option value="Farenheit">Farenheit</option>
-        </select>
-    </div>
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
+<script type="text/x-red" data-template-name="temperature sensor">
+  <div class="form-row">
+      <label for="node-input-module"><i class="fa fa-hashtag"></i>Module</label>
+      <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
+  </div>
+  <div class="form-row">
+      <label for="node-input-channel"><i class="fa fa-hashtag"></i>Channel</label>
+      <input type="text" id="node-input-channel" placeholder="channel number"  style="width: 150px;">
+  </div>
+  <div class="form-row">
+      <label for="node-input-sensorType"><i class="icon-tag"></i> Sensor Type</label>
+      <select type="text" id="node-input-sensorType" placeholder="sensorType">
+          <option value="RTD">RTD</option>
+          <option value="TC">TC</option>
+      </select>
+  </div>
+      <div class="form-row">
+      <label for="node-input-signalType"><i class="icon-tag"></i> Signal Type</label>
+      <select type="text" id="node-input-signalType" placeholder="signalType">
+          <option value="Celsius">Celsius</option>
+          <option value="Farenheit">Farenheit</option>
+      </select>
+  </div>
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
 </script>
 
-<script type="text/x-red" data-help-name="Temperature Input">
-    <p>A node that parses modbus data for the temperature input modules on the WAGO PFC Controller</p>
+<script type="text/x-red" data-help-name="temperature sensor">
+  <p>A node that parses modbus data for the temperature input modules on the WAGO PFC Controller</p>
 </script>

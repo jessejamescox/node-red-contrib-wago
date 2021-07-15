@@ -37,5 +37,5 @@ module.exports = function (RED) {
       }
     });
   }
-  RED.nodes.registerType("Temperature Input", tempInput);
+  RED.nodes.registerType("temperature sensor", tempInput);
 };
