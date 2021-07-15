@@ -27,12 +27,12 @@ module.exports = function (RED) {
         actual_module_num == module_num
       ) {
         if (signal_type == "Celsius") {
-          outValue = toFixed(raw_input / 10, 2);
+          outValue = (raw_input / 10, 2).toFixed(2);
         }
         if (signal_type == "Farenheit") {
-          outValue = toFixed((raw_input / 10) * (9 / 5) + 32, 2);
+          outValue = ((raw_input / 10) * (9 / 5) + 32, 2).toFixed(2);
         }
-        outputMsg.payload = parseFLoat(outValue).toFixed(2);
+        outputMsg.payload = parseFloat(outValue);
         node.send(outputMsg);
       }
     });
