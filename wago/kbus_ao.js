@@ -125,5 +125,5 @@ module.exports = function(RED) {
             node.send(outputMsg);
         });
     }
-    RED.nodes.registerType("Analog Output",analogOutput);
+    RED.nodes.registerType("analog output",analogOutput);
 };
