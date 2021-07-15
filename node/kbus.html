@@ -705,7 +705,7 @@
         }
     });
     RED.nodes.registerType('kbus in',{
-        category: 'network',
+        category: 'wago',
         defaults: {
             name: {value:""},
             topic: {value:"",required:true,validate: RED.validators.regex(/^(#$|(\+|[^+#]*)(\/(\+|[^+#]*))*(\/(\+|#|[^+#]*))?$)/)},
@@ -747,7 +747,7 @@
     });
 
     RED.nodes.registerType('kbus out',{
-        category: 'network',
+        category: 'wago',
         defaults: {
             name: {value:""},
             topic: {value:""},
