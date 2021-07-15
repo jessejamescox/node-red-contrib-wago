@@ -1,38 +1,33 @@
 {
-  "name": "@prescient-devices/node-red-node-mqtt-in-json",
-  "version": "1.2.1",
-  "description": "MQTT input node that JSON-parses payload if possible, and optionally ignores empty topics. Paired with @prescient-devices/node-red-node-mqtt-out-json it is able to receive a whole message, not just the payload",
+  "name": "node-red-contrib-kbus",
+  "version": "0.1.0",
+  "description": "TODO: add description and fill out",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
-    "name": "Andy Wang",
-    "email": "andy.wang@prescientdevices.com"
+    "name": "Jesse Cox",
+    "email": "jesse.cox@wago.com"
   },
-  "contributors": [
-    {
-      "name": "Pablo Acosta-Serafini",
-      "email": "pablo.acosta@prescientdevices.com"
-    }
-  ],
-  "license": "ISC",
+  "contributors": [],
+  "license": "MIT",
   "node-red": {
     "nodes": {
-      "kbus in": "mqtt-in-json.js"
+      "kbus in": "kbus-in.js"
     }
   },
   "dependencies": {
     "is-utf8": "^0.2.1"
   },
   "keywords": [
-    "node-red"
+    "kbus"
   ],
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:prescient-devices/PD-Nodes.git"
+    "url": "https://github.com/jessejamescox/node-red-contrib-kbus.git"
   }
 }
