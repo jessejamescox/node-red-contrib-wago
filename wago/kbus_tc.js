@@ -9,9 +9,9 @@ module.exports = function (RED) {
     RED.nodes.createNode(this, n);
     //var context = this.context();
     var node = this;
-    var module_num = n.module;
-    var channel_num = n.channel;
-    var signal_type = n.signal_type;
+    var module_num = n.module.value;
+    var channel_num = n.channel.value;
+    var signal_type = n.signal_type.value;
 
     var node = this;
 
