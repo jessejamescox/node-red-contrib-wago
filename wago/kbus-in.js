@@ -28,7 +28,7 @@ module.exports = function (RED) {
         text: "node-red:common.status.disconnected",
       })
       if (this.topic) {
-        var subTopic = this.topc + "/#";
+        var subTopic = this.topic + "/#";
         node.brokerConn.register(this)
         this.brokerConn.subscribe(
           subTopic,
