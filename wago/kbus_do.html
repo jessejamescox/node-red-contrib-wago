@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Digital Output',{
+    RED.nodes.registerType('digital output',{
         category: 'wago pfc',
         color: '#C0C0C0',
         defaults: {
@@ -11,12 +11,12 @@
         outputs:1,
         icon: "module_icon.png",
         label: function() {
-            return this.name||"Digital Output";
+            return this.name||"digital output";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="Digital Output">
+<script type="text/x-red" data-template-name="digital output">
     <div class="form-row">
         <label for="node-input-module"><i class="fa fa-arrow-down"></i>Module</label>
         <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
@@ -31,7 +31,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="Digital Output">
+<script type="text/x-red" data-help-name="digital output">
     <p>
         Passes the bit data to local digital outputs<br/>
     </p>

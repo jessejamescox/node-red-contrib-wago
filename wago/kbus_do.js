@@ -8,11 +8,13 @@ module.exports = function(RED) {
        var channelNum = n.channel
 
         this.on('input', function(msg) {
-            var inMsg = JSON.parse(msg.payload);
+            //var inMsg = JSON.parse(msg.payload);
             var o = {};
-            o = {payload: {module: moduleNum, channel: channelNum, value: inMsg}};
-            node.send(o);
+            if (msg.payload === true || msg.payload === false)  {
+                o = {payload: {module: moduleNum, channel: channelNum, value: inMsg}};
+                node.send(o);
+            }
         });
     }
-    RED.nodes.registerType("Digital Output",digitalOutput);
+    RED.nodes.registerType("digital output",digitalOutput);
 };
