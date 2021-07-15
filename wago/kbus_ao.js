@@ -81,13 +81,13 @@ module.exports = function(RED) {
 
             switch(sensorType)  {
                 case "0-20mA":
-                    //actualSensorValue = scale(msg.payload, 0, 20, rawMinOutput, rawMaxOutput);
+                    actualSensorValue = scale(msg.payload, 0, 20, rawMinOutput, rawMaxOutput);
                     break;
                 case "4-20mA":
-                    //actualSensorValue = scale(msg.payload, 4, 20, rawMinOutput, rawMaxOutput);
+                    actualSensorValue = scale(msg.payload, 4, 20, rawMinOutput, rawMaxOutput);
                     break;
                 case "0-10VDC":
-                    //actualSensorValue = scale(msg.payload, 0, 10, rawMinOutput, rawMaxOutput);
+                    actualSensorValue = scale(msg.payload, 0, 10, rawMinOutput, rawMaxOutput);
                     break;
                 case "+/-10VDC": 
                     if (msg.payload < (high-low)/2){
@@ -101,7 +101,7 @@ module.exports = function(RED) {
                     actualSensorValue = val_10vdc;   
                     break;
                 case "0-30VDC":
-                    //actualSensorValue = scale(msg.payload, 0, 30, rawMinOutput, rawMaxOutput);
+                    actualSensorValue = scale(msg.payload, 0, 30, rawMinOutput, rawMaxOutput);
                     break;
             }
             // operation based on processSelected
