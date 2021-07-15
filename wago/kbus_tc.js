@@ -7,8 +7,7 @@ module.exports = function(RED) {
        var node = this;
        var module_num = n.module;
        var channel_num = n.channel;
-       var signal_type = n.signal_type;  
-       var outValue;     
+       var signal_type = n.signal_type;     
 
        function toFixed( num, precision ) {
         return (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
@@ -16,6 +15,7 @@ module.exports = function(RED) {
 
         this.on('input', function(msg) {
             var outputMsg = {};
+            var outValue = 0;
             var actual_module_num = msg.payload.payload.module;
             var actual_channel_num = msg.payload.payload.channel;
             var raw_input = msg.payload.payload.value;
