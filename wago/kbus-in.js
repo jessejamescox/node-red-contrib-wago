@@ -28,9 +28,10 @@ module.exports = function (RED) {
         text: "node-red:common.status.disconnected",
       })
       if (this.topic) {
+        var subTopic = this.topc + "/#";
         node.brokerConn.register(this)
         this.brokerConn.subscribe(
-          this.topic,
+          subTopic,
           this.qos,
           function (topic, payload, packet) {
             if (isUtf8(payload)) {
@@ -66,13 +67,13 @@ module.exports = function (RED) {
                 }
               }
             }
-            //if (msg.topic == status_topic)  {
-            //  node.send([msg, null]);
-            //}
-            //if (msg.topic == pi_topic)  {
-            //  node.send([null, msg]);
-            //}
-            node.send(msg)
+            if (msg.topic == status_topic)  {
+              node.send([msg, null]);
+            }
+            if (msg.topic == pi_topic)  {
+              node.send([null, msg]);
+            }
+            //node.send(msg)
           }.bind(this),
           this.id
         )
