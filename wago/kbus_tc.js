@@ -5,10 +5,9 @@ module.exports = function(RED) {
        RED.nodes.createNode(this,n);
        //var context = this.context();
        var node = this;
-       var moduleNum = n.module;
-       var channelNum = n.channel;
-       var sensorType = n.sensorType;
-       var signalType = n.signalType;  
+       var module_num = n.module;
+       var channel_num = n.channel;
+       var signal_type = n.signal_type;  
        var outValue;     
 
        function toFixed( num, precision ) {
@@ -17,18 +16,17 @@ module.exports = function(RED) {
 
         this.on('input', function(msg) {
             var outputMsg = {};
-            var inMsg = JSON.parse(msg.payload);
-            var actualModuleNum = inMsg.payload.module;
-            var actualChannelNum = inMsg.payload.channel;
-            var rawInput = inMsg.payload.value;
+            var actual_module_num = msg.payload.payload.module;
+            var actual_channel_num = msg.payload.payload.channel;
+            var raw_input = msg.payload.payload.value;
 
 
-            if ((actualChannelNum == channelNum) && (actualModuleNum == moduleNum)) {
-                if (signalType == "Celsius")    {
-                    outValue = toFixed((rawInput / 10), 2);
+            if ((actual_channel_num == channel_num) && (actual_module_num == module_num)) {
+                if (signasignal_typeType == "Celsius")    {
+                    outValue = toFixed((raw_input / 10), 2);
                 }
-                if (signalType == "Farenheit")  {
-                    outValue = toFixed((rawInput / 10 * (9/5) + 32), 2);              
+                if (signal_type == "Farenheit")  {
+                    outValue = toFixed((raw_input / 10 * (9/5) + 32), 2);              
                 }    
                 outputMsg.payload = parseFloat(outValue);       
                 node.send(outputMsg);
