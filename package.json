@@ -14,7 +14,12 @@
   "license": "MIT",
   "node-red": {
     "nodes": {
-      "kbus in": "wago/kbus-in.js"
+      "kbus in":        "wago/kbus-in.js",
+      "digital input":  "wago/kbus_di.js",
+      "digital output": "wago/kbus_do.js",
+      "analog input":   "wago/kbus_ai.js",
+      "thermocouple":   "wago/kbus_tc.js",
+      "analog output":  "wago/kbus_ao.js"
     }
   },
   "dependencies": {
