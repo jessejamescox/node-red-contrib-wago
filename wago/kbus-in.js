@@ -16,6 +16,10 @@ module.exports = function (RED) {
     if (!/^(#$|(\+|[^+#]*)(\/(\+|[^+#]*))*(\/(\+|#|[^+#]*))?$)/.test(this.topic)) {
       return this.warn(RED._("mqtt.errors.invalid-topic"))
     }
+
+    var status_topic  = this.topic + "/kbus/status";
+    var pi_topic      = this.topic + "/kbus/event/inputs";
+
     var node = this
     if (this.brokerConn) {
       this.status({
@@ -62,7 +66,13 @@ module.exports = function (RED) {
                 }
               }
             }
-            node.send(msg)
+            if (msg.topic == status_topic)  {
+              node.send([msg.payload, null]);
+            }
+            if (msg.topic == pi_topic)  {
+              node.send([null, msg.payload]);
+            }
+            //node.send(msg)
           }.bind(this),
           this.id
         )
