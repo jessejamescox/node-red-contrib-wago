@@ -11,7 +11,7 @@ module.exports = function(RED) {
             //var inMsg = JSON.parse(msg.payload);
             var o = {};
             if (msg.payload === true || msg.payload === false)  {
-                o = {payload: {module: moduleNum, channel: channelNum, value: inMsg}};
+                o = {payload: {module: moduleNum, channel: channelNum, value: msg.payload}};
                 node.send(o);
             }
         });
