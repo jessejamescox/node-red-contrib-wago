@@ -1,52 +1,38 @@
 {
-  "name": "node-red-contrib-kbus",
-  "version": "0.0.1",
-  "author": "Jesse Cox",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jessejamescox/node-red-contrib-kbus.git"
+  "name": "@prescient-devices/node-red-node-mqtt-in-json",
+  "version": "1.2.1",
+  "description": "MQTT input node that JSON-parses payload if possible, and optionally ignores empty topics. Paired with @prescient-devices/node-red-node-mqtt-out-json it is able to receive a whole message, not just the payload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "description": "A set of nodes to interface with WAGO PFC I/O Directly",
-  "dependencies": {
-    "acorn": "8.3.0",
-        "acorn-walk": "8.1.0",
-        "ajv": "6.12.6",
-        "body-parser": "1.19.0",
-        "cheerio": "0.22.0",
-        "content-type": "1.0.4",
-        "cookie-parser": "1.4.5",
-        "cookie": "0.4.1",
-        "cors": "2.8.5",
-        "cron": "1.7.2",
-        "denque": "1.5.0",
-        "fs-extra": "8.1.0",
-        "fs.notify": "0.0.4",
-        "hash-sum": "2.0.0",
-        "https-proxy-agent": "5.0.0",
-        "is-utf8": "0.2.1",
-        "js-yaml": "3.14.0",
-        "media-typer": "1.1.0",
-        "mqtt": "4.2.6",
-        "multer": "1.4.2",
-        "mustache": "4.2.0",
-        "on-headers": "1.0.2",
-        "raw-body": "2.4.1",
-        "request": "2.88.0",
-        "ws": "6.2.2",
-        "xml2js": "0.4.23",
-        "iconv-lite": "0.6.2"
+  "author": {
+    "name": "Andy Wang",
+    "email": "andy.wang@prescientdevices.com"
   },
-  "keywords": [
-    "node-red",
-    "wago",
-    "kbus",
-    "plc",
-    "codesys"
+  "contributors": [
+    {
+      "name": "Pablo Acosta-Serafini",
+      "email": "pablo.acosta@prescientdevices.com"
+    }
   ],
+  "license": "ISC",
   "node-red": {
     "nodes": {
-      "scale": "node/kbus.js"
+      "mqtt in JSON": "mqtt-in-json.js"
     }
+  },
+  "dependencies": {
+    "is-utf8": "^0.2.1"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com:prescient-devices/PD-Nodes.git"
   }
 }
