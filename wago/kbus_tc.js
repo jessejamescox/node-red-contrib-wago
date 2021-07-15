@@ -1,9 +1,9 @@
 module.exports = function (RED) {
   "use strict";
 
-  function toFixed(num, precision) {
-    return (+(Math.round(+(num + "e" + precision)) + "e" + -precision)).toFixed(precision);
-  }
+  //function toFixed(num, precision) {
+  //  return (+(Math.round(+(num + "e" + precision)) + "e" + -precision)).toFixed(precision);
+  //}
 
   function tempInput(n) {
     RED.nodes.createNode(this, n);
@@ -32,7 +32,7 @@ module.exports = function (RED) {
         if (signal_type == "Farenheit") {
           outValue = toFixed((raw_input / 10) * (9 / 5) + 32, 2);
         }
-        outputMsg.payload = parseFloat(outValue);
+        outputMsg.payload = outValue.toFixed(2);
         node.send(outputMsg);
       }
     });
