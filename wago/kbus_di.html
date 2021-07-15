@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('Digital Input',{
-        category: 'KBUS',
-        color: '#EBEDEC',
+        category: 'wago pfc',
+        color: '#C0C0C0',
         defaults: {
             module: {value: "0"},
             channel: {value: "0"},
@@ -9,7 +9,7 @@
         },
         inputs:1,
         outputs:1,
-        icon: "iconDI.png",
+        icon: "module_icon.png",
         label: function() {
             return this.name||"Digital Input";
         }

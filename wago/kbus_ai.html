@@ -1,7 +1,7 @@
 <script type="text/javascript">
     RED.nodes.registerType('Analog Input',{
-        category: 'KBUS',
-        color: '#EBEDEC',
+        category: 'wago pfc',
+        color: '#C0C0C0',
         defaults: {
             module: {value: "0"},
             channel: {value: "0"},
@@ -15,7 +15,7 @@
         },
         inputs:1,
         outputs:1,
-        icon: "iconAI.png",
+        icon: "module_icon.png",
         label: function() {
             return this.name||"Analog Input";
         }
@@ -78,7 +78,7 @@
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
- 
+
 <script type="text/x-red" data-help-name="Analog Input">
     <p>A node that parses modbus data for the analog input modules on the WAGO PFC controller<br/>
     
