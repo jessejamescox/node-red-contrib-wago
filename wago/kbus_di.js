@@ -10,17 +10,16 @@ module.exports = function(RED) {
        //var bitOffset = n.offset;
 
         this.on('input', function(msg) {
-            var inMsg = JSON.parse(msg.payload);
-            var actualModuleNum = inMsg.module;
-            var actualChannelNum = inMsg.channel;
-            var rawInput = inMsg.value;
+            var actualModuleNum = msg.payload.payload.module;
+            var actualChannelNum = msg.payload.payload.channel;
+            var rawInput = msg.payload.payload.value;
 
             if ((actualChannelNum == channelNum) && (actualModuleNum == moduleNum)) {
-              var o = {};
-              o.payload = rawInput;
-              node.send(o);
+              var outputMsg = {};
+              outputMsg.payload = rawInput;
+              node.send(outputMsg);
           }
         });
     }
-    RED.nodes.registerType("Digital Input",digitalInput);
+    RED.nodes.registerType("digital input",digitalInput);
 };
