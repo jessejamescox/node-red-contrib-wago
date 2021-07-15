@@ -38,7 +38,7 @@ module.exports = function(RED) {
 
         this.on('input', function(msg) {
             var debugMsg = {};
-            var inMsg = JSON.parse(msg.payload);
+            var inMsg = JSON.parse(msg.payload.payload);
             var actualModuleNum = inMsg.module;
             var actualChannelNum = inMsg.channel;
             var rawInput = inMsg.value;
