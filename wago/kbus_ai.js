@@ -131,5 +131,5 @@ module.exports = function(RED) {
             }
         });
     }
-    RED.nodes.registerType("Analog Input",analogInput);
+    RED.nodes.registerType("analog input",analogInput);
 };

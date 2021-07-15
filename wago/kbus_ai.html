@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Analog Input',{
+    RED.nodes.registerType('analog input',{
         category: 'wago pfc',
         color: '#C0C0C0',
         defaults: {
@@ -17,12 +17,12 @@
         outputs:1,
         icon: "module_icon.png",
         label: function() {
-            return this.name||"Analog Input";
+            return this.name||"analog input";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="Analog Input">
+<script type="text/x-red" data-template-name="analog input">
     <div class="form-row">
         <label for="node-input-module"><i class="fa fa-arrow-down"></i>Module</label>
         <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
@@ -79,7 +79,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="Analog Input">
+<script type="text/x-red" data-help-name="analog input">
     <p>A node that parses modbus data for the analog input modules on the WAGO PFC controller<br/>
     
     Select the desired module and output type, scaling, etc...<br/>
