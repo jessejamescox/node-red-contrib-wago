@@ -22,7 +22,7 @@ module.exports = function(RED) {
 
 
             if ((actual_channel_num == channel_num) && (actual_module_num == module_num)) {
-                if (signasignal_typeType == "Celsius")    {
+                if (signal_type == "Celsius")    {
                     outValue = toFixed((raw_input / 10), 2);
                 }
                 if (signal_type == "Farenheit")  {
