@@ -18,9 +18,9 @@ module.exports = function(RED) {
         this.on('input', function(msg) {
             var outputMsg = {};
             var inMsg = JSON.parse(msg.payload);
-            var actualModuleNum = inMsg.module;
-            var actualChannelNum = inMsg.channel;
-            var rawInput = inMsg.value;
+            var actualModuleNum = inMsg.payload.module;
+            var actualChannelNum = inMsg.payload.channel;
+            var rawInput = inMsg.payload.value;
 
 
             if ((actualChannelNum == channelNum) && (actualModuleNum == moduleNum)) {
