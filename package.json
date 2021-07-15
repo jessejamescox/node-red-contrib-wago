@@ -15,6 +15,7 @@
   "node-red": {
     "nodes": {
       "kbus in":        "wago/kbus-in.js",
+      "kbus out":       "wago/kbus-out.js",
       "digital input":  "wago/kbus_di.js",
       "digital output": "wago/kbus_do.js",
       "analog input":   "wago/kbus_ai.js",
