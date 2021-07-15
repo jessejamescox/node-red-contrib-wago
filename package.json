@@ -14,7 +14,7 @@
   "license": "MIT",
   "node-red": {
     "nodes": {
-      "kbus in": "kbus-in.js"
+      "kbus in": "wago/kbus-in.js"
     }
   },
   "dependencies": {
