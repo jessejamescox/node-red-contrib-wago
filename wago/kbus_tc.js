@@ -13,12 +13,14 @@ module.exports = function (RED) {
     var channel_num = n.channel;
     var signal_type = n.signal_type;
 
+    var node = this;
+
     this.on("input", function (msg) {
       var outputMsg = {};
       var outValue = 0;
-      var actual_module_num = msg.payload.payload.module;
-      var actual_channel_num = msg.payload.payload.channel;
-      var raw_input = msg.payload.payload.value;
+      var actual_module_num = parseInt(msg.payload.payload.module);
+      var actual_channel_num = parseInt(msg.payload.payload.channel);
+      var raw_input = parseFloat(msg.payload.payload.value);
 
       if (
         actual_channel_num == channel_num &&
