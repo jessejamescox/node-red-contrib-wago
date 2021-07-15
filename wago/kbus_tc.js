@@ -27,7 +27,7 @@ module.exports = function (RED) {
         actual_module_num == module_num
       ) {
         if (signal_type == "Celsius") {
-          outValue = (raw_input / 10, 2);
+          outValue = (raw_input / 10);
         }
         if (signal_type == "Farenheit") {
           outValue = ((raw_input / 10) * (9 / 5) + 32);
