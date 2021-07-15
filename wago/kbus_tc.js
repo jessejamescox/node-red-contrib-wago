@@ -32,7 +32,7 @@ module.exports = function (RED) {
         if (signal_type == "Farenheit") {
           outValue = toFixed((raw_input / 10) * (9 / 5) + 32, 2);
         }
-        outputMsg.payload = outValue.toFixed(2);
+        outputMsg.payload = parseFLoat(outValue).toFixed(2);
         node.send(outputMsg);
       }
     });
