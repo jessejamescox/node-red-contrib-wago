@@ -33,7 +33,8 @@ module.exports = function(RED) {
             }
         }
        function toFixed( num, precision ) {
-        return (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
+        var thisHold = (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
+        return parseFloat(thisHold);
         }
 
         this.on('input', function(msg) {
@@ -111,10 +112,10 @@ module.exports = function(RED) {
                         } else {
                             val_int16 = rawInput;
                         }
-                        outputMsg.payload = parseFloat(val_int16);
+                        outputMsg.payload = val_int16;
                         break;
                     case "SensorVal":
-                        outputMsg.payload = toFixed(parseFloat(actualSensorValue, prec));
+                        outputMsg.payload = toFixed(actualSensorValue, prec);
                         break;
                     case "Scaled":
                         if (sensorType == "+/-10VDC"){
@@ -122,7 +123,7 @@ module.exports = function(RED) {
                         } else {
                             var scaledHold = scale(rawInput, rawMinInput, rawMaxInput, low, high);
                         }
-                        outputMsg.payload = toFixed(parseFloat(scaledHold, prec));
+                        outputMsg.payload = toFixed(scaledHold, prec);
                     break;
                 }
                 node.send(outputMsg);
