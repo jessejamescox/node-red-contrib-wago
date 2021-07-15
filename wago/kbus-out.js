@@ -72,5 +72,5 @@ module.exports = function (RED) {
       this.error(RED._("mqtt.errors.missing-config"))
     }
   }
-  RED.nodes.registerType("mqtt out JSON", MQTTOutJSONNode)
+  RED.nodes.registerType("kbus out", MQTTOutJSONNode)
 }
