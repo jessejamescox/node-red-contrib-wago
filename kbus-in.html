@@ -1,4 +1,4 @@
-<script type="text/x-red" data-template-name="mqtt in JSON">
+<script type="text/x-red" data-template-name="kbus in">
   <div class="form-row">
       <label for="node-input-broker"><i class="fa fa-globe"></i> <span data-i18n="mqtt.label.broker"></span></label>
       <input type="text" id="node-input-broker">
@@ -27,7 +27,7 @@
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="mqtt in JSON">
+<script type="text/x-red" data-help-name="kbus in">
   <p>Connects to a MQTT broker and subscribes to messages from the specified topic.</p>
       <h3>Outputs</h3>
       <dl class="message-properties">
@@ -48,7 +48,7 @@
 </script>
 
 <script type="text/javascript">
-  RED.nodes.registerType("mqtt in JSON", {
+  RED.nodes.registerType("kbus in", {
     category: "pdlib",
     defaults: {
       name: { value: "" },
@@ -74,7 +74,7 @@
     labelStyle: function () {
       return this.name ? "node_label_italic" : ""
     },
-    paletteLabel: "mqtt in JSON",
+    paletteLabel: "kbus in",
     oneditprepare: function () {
       if (this.qos === undefined) {
         $("#node-input-qos").val("2")

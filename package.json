@@ -19,7 +19,7 @@
   "license": "ISC",
   "node-red": {
     "nodes": {
-      "mqtt in JSON": "mqtt-in-json.js"
+      "kbus in": "mqtt-in-json.js"
     }
   },
   "dependencies": {
