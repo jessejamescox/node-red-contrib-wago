@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-wago",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A set of nodes to ointeract directly with WAGO PFC controllers backplane.  Controller should be runnung the open source wago-kbus-daemon",
   "main": "index.js",
   "scripts": {
