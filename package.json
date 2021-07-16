@@ -27,7 +27,12 @@
     "is-utf8": "^0.2.1"
   },
   "keywords": [
-    "kbus"
+    "node-red",
+    "wago",
+    "kbus",
+    "plc",
+    "codesys",
+    "automation"
   ],
   "publishConfig": {
     "access": "public"
