@@ -25,7 +25,7 @@ Requirements
 
 License
 =======
-node-red-contrib-wago is under the MIT license. See the [LICENSE](https://github.com/sourcerer-io/sourcerer-app/blob/develop/LICENSE.md) for more information.
+node-red-contrib-wago is under the MIT license. See the [LICENSE](https://github.com/jessejamescox/node-red-contrib-kbus/blob/main/LICENSE.md) for more information.
 
 Links
 =====
