@@ -3,7 +3,7 @@
   <a href="kbus-daemon gif"><img src=images/kbus-daemon.gif></a>
 </h1>
 
-An open source MQTT driver for WAGO PFC controllers backplane.
+A set of nodes to control open source MQTT driver for WAGO PFC controllers backplane.
 <br>
 
 Features
@@ -21,7 +21,7 @@ You must install the driver on your controller.  The installer can be found here
 
 Requirements
 ============
-* WAGO PFC with firmware >= 18
+* WAGO PFC with firmware >= 18 running the [Open Source Kbus Daemon](https://github.com/jessejamescox/kbus-daemon-installer)
 
 License
 =======
