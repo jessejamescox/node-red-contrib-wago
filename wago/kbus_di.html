@@ -1,38 +1,39 @@
 <script type="text/javascript">
-    RED.nodes.registerType('digital input',{
-        category: 'wago pfc',
-        color: '#C0C0C0',
-        defaults: {
-            module: {value: "0"},
-            channel: {value: "0"},
-            name: {value:""}
-        },
-        inputs:1,
-        outputs:1,
-        icon: "module_icon.png",
-        label: function() {
-            return this.name||"digital input";
-        }
-    });
+  RED.nodes.registerType("digital input", {
+    category: "wago pfc",
+    color: "#C0C0C0",
+    defaults: {
+      module: { value: "0" },
+      channel: { value: "0" },
+      name: { value: "" },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: "module_icon.png",
+    label: function () {
+      return this.name || "digital input";
+    },
+  });
 </script>
 
 <script type="text/x-red" data-template-name="digital input">
-    <div class="form-row">
-        <label for="node-input-module"><i class="fa fa-arrow-down"></i>Module</label>
-        <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
-    </div>
-    <div class="form-row">
-        <label for="node-input-channel"><i class="fa fa-arrow-down"></i>Channel</label>
-        <input type="text" id="node-input-channel" placeholder="channel number"  style="width: 150px;">
-    </div>
-    <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
+  <div class="form-row">
+      <label for="node-input-module"><i class="fa fa-arrow-down"></i>Module</label>
+      <input type="text" id="node-input-module" placeholder="module number"  style="width: 150px;">
+  </div>
+  <div class="form-row">
+      <label for="node-input-channel"><i class="fa fa-arrow-down"></i>Channel</label>
+      <input type="text" id="node-input-channel" placeholder="channel number"  style="width: 150px;">
+  </div>
+  <div class="form-row">
+      <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+      <input type="text" id="node-input-name" placeholder="Name">
+  </div>
 </script>
 
 <script type="text/x-red" data-help-name="digital input">
     <p>
-        A node that parses modbus data to individual digital output pins.<br/>
+        A node that reads a digital input channel from WAGO PFC controllers backplane<br/>
+        Select the desired module and output channel and a msg is sent on change-of-state<br/>
     </p>
-</script>   
+</script>
