@@ -79,6 +79,7 @@ module.exports = function (RED) {
                   fill: "green",
                   shape: "dot",
                   text: "node-red:common.status.connected" + "|| switch: run",
+                })
               }
               node.send([msg, null]);
             }
