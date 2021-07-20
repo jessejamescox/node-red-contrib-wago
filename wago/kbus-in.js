@@ -68,18 +68,18 @@ module.exports = function (RED) {
               }
             }
             if (msg.topic == status_topic)  {
-              // if (msg.payload.switch_state == "STOP") {
-              //   node.status({
-              //     fill: "yellow",
-              //     shape: "dot",
-              //     text: "node-red:common.status.connected" + "|| switch: stop",
-              //   })
-              // } else  {
-              //   node.status({
-              //     fill: "green",
-              //     shape: "dot",
-              //     text: "node-red:common.status.connected" + "|| switch: run",
-              // }
+              if (msg.payload.controller.switch_state == "STOP") {
+                node.status({
+                  fill: "yellow",
+                  shape: "dot",
+                  text: "node-red:common.status.connected" + "|| switch: stop",
+                })
+              } else  {
+                node.status({
+                  fill: "green",
+                  shape: "dot",
+                  text: "node-red:common.status.connected" + "|| switch: run",
+              }
               node.send([msg, null]);
             }
             if (msg.topic == pi_topic)  {
