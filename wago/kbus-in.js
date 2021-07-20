@@ -72,7 +72,7 @@ module.exports = function (RED) {
                 node.status({
                   fill: "yellow",
                   shape: "ring",
-                  text: "connected" + "|| switch: stop",
+                  text: "connected" + " || switch: stop",
                 })
               } else  {
                 node.status({
