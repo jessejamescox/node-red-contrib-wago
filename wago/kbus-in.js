@@ -71,14 +71,14 @@ module.exports = function (RED) {
               if (msg.payload.controller.switch_state == "STOP") {
                 node.status({
                   fill: "yellow",
-                  shape: "dot",
-                  text: "node-red:common.status.connected" + "|| switch: stop",
+                  shape: "ring",
+                  text: "connected" + "|| switch: stop",
                 })
               } else  {
                 node.status({
                   fill: "green",
                   shape: "dot",
-                  text: "node-red:common.status.connected" + "|| switch: run",
+                  text: "connected" + " || switch: run",
                 })
               }
               node.send([msg, null]);
