@@ -50,12 +50,10 @@ module.exports = function (RED) {
             var val_int16 = 0;
 
             var moduleStr = "module" + moduleNum;
-            var moduleStr = "channel" + channelNum;
+            var channelStr = "channel" + channelNum;
 
-            if (
-                msg.payload.state.reported.controller.modules.hasOwnProperty(moduleStr)) {
-                if (
-                    msg.payload.state.reported.controller.modules[moduleStr].channels.hasOwnProperty(channelStr)) {
+            if (msg.payload.state.reported.controller.modules.hasOwnProperty(moduleStr)) {
+                if (msg.payload.state.reported.controller.modules[moduleStr].channels.hasOwnProperty(channelStr)) {
 
                     var rawInput = msg.payload.state.reported.controller.modules[moduleStr].channels[channelStr].value;
 
