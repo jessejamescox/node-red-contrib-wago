@@ -1,25 +1,36 @@
-module.exports = function(RED) {
+module.exports = function (RED) {
     "use strict";
 
     function digitalInput(n) {
-       RED.nodes.createNode(this,n);
-       var node = this;
-       var moduleNum = n.module
-       var channelNum = n.channel
-       //var bitSize = parseInt(n.outputs);
-       //var bitOffset = n.offset;
+        RED.nodes.createNode(this, n);
+        var node = this;
+        var moduleNum = n.module;
+        var channelNum = n.channel;
 
-        this.on('input', function(msg) {
-            var actualModuleNum = msg.payload.payload.module;
-            var actualChannelNum = msg.payload.payload.channel;
+        this.on("input", function (msg) {
             var rawInput = msg.payload.payload.value;
 
-            if ((actualChannelNum == channelNum) && (actualModuleNum == moduleNum)) {
-              var outputMsg = {};
-              outputMsg.payload = rawInput;
-              node.send(outputMsg);
-          }
+            var moduleStr = "module" + moduleNum;
+            var channelStr = "channel" + channelNum;
+
+            if (msg.payload.state.reported.controller.modules.hasOwnProperty(moduleStr)) {
+                if (msg.payload.state.reported.controller.modules[moduleStr].channels.hasOwnProperty(channelStr)) {
+
+                    // copy in the channel value
+                    var rawInput =
+                        msg.payload.state.reported.controller.modules[moduleStr].channels[channelStr].value;
+
+                    // create the output object    
+                    var outputMsg = {};
+                    
+                    // copy the value to the output
+                    outputMsg.payload = rawInput;
+                    
+                    // send it
+                    node.send(outputMsg);
+                }
+            }
         });
     }
-    RED.nodes.registerType("digital input",digitalInput);
+    RED.nodes.registerType("digital input", digitalInput);
 };
