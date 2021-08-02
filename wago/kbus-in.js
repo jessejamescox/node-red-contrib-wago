@@ -18,7 +18,7 @@ module.exports = function (RED) {
     }
 
     var status_topic  = this.topic + "/kbus/status";
-    var pi_topic      = this.topic + "/kbus/event/inputs";
+    var pi_topic      = this.topic + "/controller/kbus/event/inputs";
 
     var node = this
     if (this.brokerConn) {

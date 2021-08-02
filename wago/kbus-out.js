@@ -31,7 +31,7 @@ module.exports = function (RED) {
         msg.retain = node.retain || msg.retain || false
         msg.retain = msg.retain === true || msg.retain === "true" || false
         if (node.topic) {
-          msg.topic = node.topic + "/kbus/event/outputs"
+          msg.topic = node.topic + "/controller/kbus/event/outputs"
         }
         if (msg.hasOwnProperty("payload")) {
           if (
