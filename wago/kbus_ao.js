@@ -121,6 +121,10 @@ module.exports = function(RED) {
                     outValue = toFixed(scaledHold, 0); 
                     break;
             }
+
+            var moduleStr = "module" + moduleNum;
+            var channelStr = "channel" + channelNum;
+            
             var o = {
                 payload: {
                   state: {
