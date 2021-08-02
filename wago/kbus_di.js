@@ -8,7 +8,6 @@ module.exports = function (RED) {
         var channelNum = n.channel;
 
         this.on("input", function (msg) {
-            var rawInput = msg.payload.payload.value;
 
             var moduleStr = "module" + moduleNum;
             var channelStr = "channel" + channelNum;
