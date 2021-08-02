@@ -55,6 +55,7 @@ module.exports = function (RED) {
             if (msg.payload.state.reported.controller.modules.hasOwnProperty(moduleStr)) {
                 if (msg.payload.state.reported.controller.modules[moduleStr].channels.hasOwnProperty(channelStr)) {
 
+                    // copy in the channel value
                     var rawInput = msg.payload.state.reported.controller.modules[moduleStr].channels[channelStr].value;
 
                     switch (resolution) {
