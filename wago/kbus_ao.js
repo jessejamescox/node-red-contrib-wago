@@ -32,6 +32,7 @@ module.exports = function(RED) {
                 }
             }
         }
+
         function toFixed( num, precision ) {
         return (+(Math.round(+(num + 'e' + precision)) + 'e' + -precision)).toFixed(precision);
         }
@@ -40,7 +41,6 @@ module.exports = function(RED) {
             var rawInput = parseInt(msg.payload);
             var rawMinOutput = 0;
             var rawMaxOutput = 0;
-            var outputMsg = {};
             var actualSensorValue;
             var val_10vdc = 0;
             var val_int16 = 0;
@@ -121,8 +121,27 @@ module.exports = function(RED) {
                     outValue = toFixed(scaledHold, 0); 
                     break;
             }
-            outputMsg = {payload: {module: moduleNum, channel: channelNum, value: outValue}};
-            node.send(outputMsg);
+            var o = {
+                payload: {
+                  state: {
+                    desired: {
+                      controller: {
+                        modules: {
+                          [moduleStr]: {
+                            channels: {
+                              [channelStr]: {
+                                value: outValue,
+                              },
+                            },
+                          },
+                        },
+                      },
+                    },
+                  },
+                },
+              };
+            //outputMsg = {payload: {module: moduleNum, channel: channelNum, value: outValue}};
+            node.send(o);
         });
     }
     RED.nodes.registerType("analog output",analogOutput);

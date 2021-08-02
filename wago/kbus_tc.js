@@ -7,33 +7,35 @@ module.exports = function (RED) {
 
   function tempInput(n) {
     RED.nodes.createNode(this, n);
-    //var context = this.context();
     var node = this;
-    var module_num = n.module;
-    var channel_num = n.channel;
-    var signal_type = n.signal_type;
+    var moduleNum = n.module;
+    var channelNum = n.channel;
+    var sigType = n.signal_type;
 
     var node = this;
 
     this.on("input", function (msg) {
-      var outputMsg = {};
+      var o = {};
       var outValue = 0;
-      var actual_module_num = parseInt(msg.payload.payload.module);
-      var actual_channel_num = parseInt(msg.payload.payload.channel);
-      var raw_input = parseFloat(msg.payload.payload.value);
 
-      if (
-        actual_channel_num == channel_num &&
-        actual_module_num == module_num
-      ) {
-        if (signal_type == "Celsius") {
-          outValue = (raw_input / 10);
+      var moduleStr = "module" + moduleNum;
+      var channelStr = "channel" + channelNum;
+
+      if (msg.payload.state.reported.controller.modules.hasOwnProperty(moduleStr)) {
+        if (msg.payload.state.reported.controller.modules[moduleStr].channels.hasOwnProperty(channelStr)) {
+
+          var rawInput = msg.payload.state.reported.controller.modules[moduleStr].channels[channelStr].value;
+
+
+          if (sigType == "Celsius") {
+            outValue = (rawInput / 10);
+          }
+          if (sigType == "Farenheit") {
+            outValue = parseFloat(toFixed(((rawInput / 10) * (9 / 5) + 32), 2));
+          }
+          o.payload = outValue;
+          node.send(o);
         }
-        if (signal_type == "Farenheit") {
-          outValue = parseFloat(toFixed(((raw_input / 10) * (9 / 5) + 32), 2));
-        }
-        outputMsg.payload = outValue;
-        node.send(outputMsg);
       }
     });
   }
