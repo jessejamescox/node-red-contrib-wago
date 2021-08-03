@@ -17,7 +17,7 @@ module.exports = function (RED) {
       return this.warn(RED._("mqtt.errors.invalid-topic"))
     }
 
-    var status_topic  = this.topic + "/kbus/status";
+    var status_topic  = this.topic + "/controller/status";
     var pi_topic      = this.topic + "/controller/kbus/event/inputs";
 
     var node = this
