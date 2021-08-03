@@ -25,7 +25,7 @@ module.exports = function (RED) {
       this.status({
         fill: "red",
         shape: "ring",
-        text: "node-red:common.status.disconnected",
+        text: "disconnected",
       })
       if (this.topic) {
         var subTopic = this.topic + "/#";
@@ -68,11 +68,11 @@ module.exports = function (RED) {
               }
             }
             if (msg.topic == status_topic)  {
-              if (msg.payload.controller.switch_state == "STOP") {
+              if (msg.payload.state.reported.controller.switch_state == "STOP") {
                 node.status({
                   fill: "yellow",
                   shape: "ring",
-                  text: "connected" + " || switch: stop",
+                  text: "connected" + "|| switch: stop",
                 })
               } else  {
                 node.status({
