@@ -33,6 +33,7 @@ module.exports = function (RED) {
           if (sigType == "Farenheit") {
             outValue = parseFloat(toFixed(((rawInput / 10) * (9 / 5) + 32), 2));
           }
+          node.status({fill: "green", shape: "ring", text: sigType + ' : ' + outValue});
           o.payload = outValue;
           node.send(o);
         }

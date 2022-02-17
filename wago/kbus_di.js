@@ -25,6 +25,7 @@ module.exports = function (RED) {
                     outputMsg.payload = rawInput;
                     
                     // send it
+                    node.status({fill: "green", shape: "ring", text: 'State : ' + outputMsg.payload });
                     node.send(outputMsg);
                 }
             }

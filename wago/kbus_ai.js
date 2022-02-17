@@ -137,6 +137,7 @@ module.exports = function (RED) {
                             break;
                     }
                     // operation based on processSelected
+                    var statusText = '';
                     switch (selectedProcess) {
                         case "Raw":
                             if (sensorType == "+/-10VDC") {
@@ -144,10 +145,12 @@ module.exports = function (RED) {
                             } else {
                                 val_int16 = rawInput;
                             }
+                            statusText = 'Raw Value';
                             outputMsg.payload = val_int16;
                             break;
                         case "SensorVal":
                             outputMsg.payload = toFixed(actualSensorValue, prec);
+                            statusText = "Sensor Value";
                             break;
                         case "Scaled":
                             if (sensorType == "+/-10VDC") {
@@ -162,8 +165,10 @@ module.exports = function (RED) {
                                 );
                             }
                             outputMsg.payload = toFixed(scaledHold, prec);
+                            statusText = "Scaled Value";
                             break;
                     }
+                    node.status({fill: "green", shape: "ring", text: statusText + ' : ' + outputMsg.payload });
                     node.send(outputMsg);
                 }
             }

@@ -8,6 +8,7 @@ module.exports = function (RED) {
     var channelNum = n.channel;
 
     this.on("input", function (msg) {
+      node.status({fill: "green", shape: "ring", text: 'State : ' + msg.payload });
       // channel strings for the object creation
       var moduleStr = "module" + moduleNum;
       var channelStr = "channel" + channelNum;

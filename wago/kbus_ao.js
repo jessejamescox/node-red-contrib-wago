@@ -38,7 +38,8 @@ module.exports = function(RED) {
         }
 
         this.on('input', function(msg) {
-            var rawInput = parseInt(msg.payload);
+            node.status({fill: "green", shape: "ring", text: selectedProcess + ' : ' + msg.payload + ' to ' + sensorType });
+            var rawInput = parseInt(msg.payload); 
             var rawMinOutput = 0;
             var rawMaxOutput = 0;
             var actualSensorValue;
