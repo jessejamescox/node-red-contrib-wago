@@ -19,6 +19,8 @@ Get started
 ===========
 You must install the driver on your controller.  The installer can be found here [kbus-daemon installer](https://github.com/jessejamescox/kbus-daemon-installer), take care to update the kbus-daemon.conf file on the controller as this determines the broker and behavior of the kbus-daemon.
 
+Default NodeID is the controller hostname unless changed in configuration file.  
+
 Requirements
 ============
 * WAGO PFC with firmware >= 18 running the [Open Source Kbus Daemon](https://github.com/jessejamescox/kbus-daemon-installer)
